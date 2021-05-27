@@ -68,10 +68,4 @@ const stylez = StyleSheet.create({
     }
 });
 
-CreateAccountScreen.navigationOptions = () => {
-    return {
-      headerShown: false
-    };
-};
-
 export default CreateAccountScreen;

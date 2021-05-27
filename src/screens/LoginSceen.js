@@ -12,7 +12,7 @@ const LoginScreen = ({navigation}) => {
         </Spacer>
         <TextInput style={stylez.input} placeholder='Wachtwoord' placeholderTextColor='green'/>
         <Spacer>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Forgot')}>
                 <Text style={stylez.forgot}>Wachtwoord vergeten?</Text>
             </TouchableOpacity>
         </Spacer>
@@ -70,11 +70,5 @@ const stylez = StyleSheet.create({
         color: 'darkgreen'
     }
 });
-
-LoginScreen.navigationOptions = () => {
-    return {
-      headerShown: false,
-    };
-};
 
 export default LoginScreen;
