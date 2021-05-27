@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 import Spacer from '../components/Spacer';
+import Header from '../components/Header';
 
 const CreateAccountScreen = ({navigation}) => {
     return <View style={stylez.view}>
-        <Image style={stylez.image} source={require('../../assets/img/vredeEnRecht.jpg')} />
-        <View style={stylez.greenRow}>
-            <Text style={stylez.white}>Create Account Screen</Text>
-        </View>
+        <Header name='Maak een account'/>
         <Spacer>
             <TextInput style={stylez.input}  placeholder='Voornaam' placeholderTextColor='green' />
         </Spacer>
@@ -31,24 +29,13 @@ const CreateAccountScreen = ({navigation}) => {
             </View>
         </View>
     </View>
-}
+};
 
 const stylez = StyleSheet.create({
     view:{
         alignItems: 'center',
         backgroundColor: 'white',
         height: '100%',
-    },
-    image:{
-        width:70,
-        height:50
-    },
-    greenRow:{
-        backgroundColor: 'darkgreen',
-        width: '100%',
-        alignItems: 'center',
-        padding: 10,
-        marginTop: 10
     },
     white:{
         color: 'white'

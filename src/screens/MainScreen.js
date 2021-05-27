@@ -13,4 +13,10 @@ const MainScreen = ({navigation}) => {
 
 const stylez = StyleSheet.create({});
 
+MainScreen.navigationOptions = () => {
+    return {
+      headerShown: false,
+    };
+};
+
 export default MainScreen;
