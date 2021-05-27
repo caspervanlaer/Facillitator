@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 import Header from '../components/Header';
 import Spacer from '../components/Spacer';
 
-const ForgotPasswordScreen = () => {
+const ForgotPasswordScreen = ({navigation}) => {
     return <View style={stylez.view}>
         <Header name='Wachtwoord vergeten'/>
         <View style={stylez.view2}>
@@ -14,10 +14,13 @@ const ForgotPasswordScreen = () => {
                 <Text style={stylez.white}>Stuur code</Text>
             </TouchableOpacity>
             <Spacer>
-                <View style={stylez.textBorder}>
-                    <Text style={stylez.green}>Uw code word naar uw email gestuurd, met die code kunt u uw wachtwoord veranderen</Text>
-                </View>
+                <TouchableOpacity style={stylez.Container} onPress={() => navigation.navigate('Login')}>
+                    <Text style={stylez.white}>Ga terug</Text>
+                </TouchableOpacity>
             </Spacer>
+            <View style={stylez.textBorder}>
+                <Text style={stylez.green}>Uw code word naar uw email gestuurd, met die code kunt u uw wachtwoord veranderen</Text>
+            </View>
         </View>
     </View>
 };
