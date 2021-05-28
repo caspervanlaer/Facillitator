@@ -1,30 +1,34 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
 import Spacer from '../components/Spacer';
 import Header from '../components/Header';
+import { Context as LanguageContext } from '../context/LanguageContext';
 
 const CreateAccountScreen = ({navigation}) => {
+    const { state } = useContext(LanguageContext);
+    //{state.currentLanguage == 'Nederlands'?  : }
+
     return <View style={stylez.view}>
-        <Header name='Maak een account'/>
+        <Header name={state.currentLanguage == 'Nederlands'? 'Maak een account' : 'Make a account' }/>
         <Spacer>
-            <TextInput style={stylez.input}  placeholder='Voornaam' placeholderTextColor='green' />
+            <TextInput style={stylez.input}  placeholder={state.currentLanguage == 'Nederlands'? 'Voornaam' : 'First name' } placeholderTextColor='green' />
         </Spacer>
-        <TextInput style={stylez.input} placeholder='Acternaam' placeholderTextColor='green' />
+        <TextInput style={stylez.input} placeholder={state.currentLanguage == 'Nederlands'? 'Acternaam' : 'Last name' } placeholderTextColor='green' />
         <Spacer>
             <TextInput style={stylez.input} placeholder='Emailadres' placeholderTextColor='green' />
         </Spacer>
-        <TextInput style={stylez.input} placeholder='Telefoonnummer' placeholderTextColor='green' />
+        <TextInput style={stylez.input} placeholder={state.currentLanguage == 'Nederlands'? 'Telefoonnummer' : 'Phone number' } placeholderTextColor='green' />
         <Spacer>
-            <TextInput style={stylez.input} placeholder='Wachtwoord' placeholderTextColor='green' />
+            <TextInput style={stylez.input} placeholder={state.currentLanguage == 'Nederlands'? 'Wachtwoord' : 'Password' } placeholderTextColor='green' />
         </Spacer>
-        <TextInput style={stylez.input} placeholder='Herhaal wachtwoord' placeholderTextColor='green' />
+        <TextInput style={stylez.input} placeholder={state.currentLanguage == 'Nederlands'? 'Herhaal wachtwoord' : 'Repeat password' } placeholderTextColor='green' />
         <View style={stylez.wrap}>
             <View style={stylez.bottomButtons}>
                 <TouchableOpacity style={stylez.Container} onPress={() => navigation.navigate('Login')}>
-                    <Text style={stylez.white}>ANNULEREN</Text>
+                    <Text style={stylez.white}>{state.currentLanguage == 'Nederlands'? 'ANNULEREN' : 'CANCEL' }</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={stylez.Container}>
-                    <Text style={stylez.white}>VOLGENDE</Text>
+                    <Text style={stylez.white}>{state.currentLanguage == 'Nederlands'? 'VOLGENDE' : 'NEXT' }</Text>
                 </TouchableOpacity>
             </View>
         </View>
