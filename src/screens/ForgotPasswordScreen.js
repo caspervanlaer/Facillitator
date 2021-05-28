@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import Spacer from '../components/Spacer';
+import { Context as LanguageContext } from '../context/LanguageContext';
 
 const ForgotPasswordScreen = ({navigation}) => {
+    const { state } = useContext(LanguageContext)
+
+    const DutchText = 'Uw code word naar uw email gestuurd, met die code kunt u uw wachtwoord veranderen';
+    const EnglishText = 'Your code will be sent to your email, with that code you can change your password';
+
     return <View style={stylez.view}>
-        <Header name='Wachtwoord vergeten'/>
+        <Header name={state.currentLanguage == 'Nederlands'? 'Wachtwoord vergeten' : 'Password forgoten' }/>
         <View style={stylez.view2}>
             <Spacer>
                 <TextInput style={stylez.input} placeholder='email adress' placeholderTextColor='green'/>
             </Spacer>
             <TouchableOpacity style={stylez.Container}>
-                <Text style={stylez.white}>Stuur code</Text>
+                <Text style={stylez.white}>{state.currentLanguage == 'Nederlands'? 'Stuur code' : 'Send code' }</Text>
             </TouchableOpacity>
             <Spacer>
                 <TouchableOpacity style={stylez.Container} onPress={() => navigation.navigate('Login')}>
-                    <Text style={stylez.white}>Ga terug</Text>
+                    <Text style={stylez.white}>{state.currentLanguage == 'Nederlands'? 'Ga terug' : 'Return' }</Text>
                 </TouchableOpacity>
             </Spacer>
             <View style={stylez.textBorder}>
-                <Text style={stylez.green}>Uw code word naar uw email gestuurd, met die code kunt u uw wachtwoord veranderen</Text>
+                <Text style={stylez.green}>{state.currentLanguage == 'Nederlands'? DutchText : EnglishText }</Text>
             </View>
         </View>
     </View>

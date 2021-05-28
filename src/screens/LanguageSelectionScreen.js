@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import Spacer from '../components/Spacer';
-import { Context as LanguageContext } from '../context/LanguageContext'
+import { Context as LanguageContext } from '../context/LanguageContext';
 
 const LanguageSelectionScreen = ({navigation}) => {
     const { state, selectLanguage } = useContext(LanguageContext)

@@ -17,4 +17,4 @@ export const { Provider, Context } = CreateDataContext(
     LanguageReducer,
     { selectLanguage },
     { currentLanguage: 'nederlands' }
-)
+);

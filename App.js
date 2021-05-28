@@ -6,7 +6,7 @@ import CreateAccountScreen from './src/screens/CreateAccountScreen';
 import MainScreen from './src/screens/MainScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import LanguageSelectionScreen from './src/screens/LanguageSelectionScreen';
-import { Provider as LanguageProvider } from './src/context/LanguageContext'
+import { Provider as LanguageProvider } from './src/context/LanguageContext';
 
 
 const navigator = createSwitchNavigator({

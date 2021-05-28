@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Text, StyleSheet, View, TouchableOpacity, TextInput, Image } from 'react-native';
 import Spacer from '../components/Spacer';
-import { Context as LanguageContext } from '../context/LanguageContext'
+import { Context as LanguageContext } from '../context/LanguageContext';
 
 const LoginScreen = ({navigation}) => {
     const { state } = useContext(LanguageContext);
