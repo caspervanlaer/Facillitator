@@ -11,7 +11,7 @@ const ForgotPasswordScreen = ({navigation}) => {
     const DutchText = 'Uw code word naar uw email gestuurd, met die code kunt u uw wachtwoord veranderen';
     const EnglishText = 'Your code will be sent to your email, with that code you can change your password';
 
-    const DutchTextSend = 'Uw code is gestuurd naar uw email, Als u uw code niet heeft gekregen klik dan op de knop opnieuw verzenden';
+    const DutchTextSend = 'Uw code is gestuurd naar uw email, Als u uw code niet heeft gekregen klik dan op de knop opnieuw versturen';
     const EnglishTextSend = 'Your code has been sent to your email, if you have not received your code please click the button called resend code';
 
     if (sendCode == false) {
@@ -59,7 +59,6 @@ const ForgotPasswordScreen = ({navigation}) => {
             </View>
         </View>
     }
-    
 };
 
 const stylez = StyleSheet.create({
