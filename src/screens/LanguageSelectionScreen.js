@@ -17,7 +17,6 @@ const LanguageSelectionScreen = ({navigation}) => {
             <TouchableOpacity style={stylez.Container} onPress={() => {navigation.navigate('Login') ; selectLanguage('English')}}>
                 <Text style={stylez.white}>English</Text>
             </TouchableOpacity>
-            <Text>{state.currentLanguage}</Text>
         </View>
     </View>
 };
