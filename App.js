@@ -7,6 +7,9 @@ import MainScreen from './src/screens/MainScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import LanguageSelectionScreen from './src/screens/LanguageSelectionScreen';
 import { Provider as LanguageProvider } from './src/context/LanguageContext';
+import {setNavigator} from './src/NavigationRef';
+import SettingsScreen from './src/screens/SettingsScreen';
+import AppInfoScreen from './src/screens/AppInfoScreen';
 
 
 const navigator = createSwitchNavigator({
@@ -21,7 +24,9 @@ const navigator = createSwitchNavigator({
     }
   }),
   MainFlow : createStackNavigator({
-    Main: MainScreen
+    Main: MainScreen,
+    Settings: SettingsScreen,
+    AppInfo: AppInfoScreen
   },{
     defaultNavigationOptions: {
       headerShown: false
@@ -35,6 +40,6 @@ const App = createAppContainer(navigator);
 
 export default () => {
   return <LanguageProvider>
-      <App />
+      <App ref={(navigator) => { setNavigator(navigator)}}/>
     </LanguageProvider>
 };

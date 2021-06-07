@@ -1,13 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import {withNavigation} from 'react-navigation';
 
-const Header = ({name}) => {
-    return <View style={stylez.view}>
-        <Image style={stylez.image} source={require('../../assets/img/vredeEnRecht.jpg')} />
-        <View style={stylez.greenRow}>
-            <Text style={stylez.white}>{name}</Text>
+const Header = ({name, navigation, navPath}) => {
+    if (navPath) {
+        return <View style={stylez.view}>
+            <TouchableOpacity onPress={() => navigation.navigate(navPath)}>
+                <Image style={stylez.backButton} source={require('../../assets/img/backbutton.png')} />
+            </TouchableOpacity>
+            <Image style={stylez.image} source={require('../../assets/img/aflogo.png')} />
+            <View style={stylez.greenRow}>
+                <Text style={stylez.white}>{name}</Text>
+            </View>
         </View>
-    </View>
+    }else {
+        return <View style={stylez.view}>
+            <Image style={stylez.image} source={require('../../assets/img/aflogo.png')} />
+            <View style={stylez.greenRow}>
+                <Text style={stylez.white}>{name}</Text>
+            </View>
+        </View>
+    }
 }
 
 const stylez = StyleSheet.create({
@@ -17,7 +30,7 @@ const stylez = StyleSheet.create({
     },
     image:{
         width:70,
-        height:50,
+        height:65,
         marginTop: 10
     },
     greenRow:{
@@ -29,7 +42,14 @@ const stylez = StyleSheet.create({
     },
     white:{
         color: 'white'
+    },
+    backButton:{
+        width:70,
+        height:70,
+        marginTop: 10,
+        position: 'absolute',
+        right: 110
     }
 })
 
-export default Header;
+export default withNavigation(Header);
