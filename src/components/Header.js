@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import {withNavigation} from 'react-navigation';
+import { navigate } from '../NavigationRef';
 
-const Header = ({name, navigation, navPath}) => {
+const Header = ({name, navPath}) => {
     if (navPath) {
         return <View style={stylez.view}>
-            <TouchableOpacity onPress={() => navigation.navigate(navPath)}>
+            <TouchableOpacity onPress={() => navigate(navPath)}>
                 <Image style={stylez.backButton} source={require('../../assets/img/backbutton.png')} />
             </TouchableOpacity>
             <Image style={stylez.image} source={require('../../assets/img/aflogo.png')} />
@@ -52,4 +52,4 @@ const stylez = StyleSheet.create({
     }
 })
 
-export default withNavigation(Header);
+export default Header;

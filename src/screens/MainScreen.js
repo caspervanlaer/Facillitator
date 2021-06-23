@@ -14,7 +14,7 @@ const MainScreen = ({navigation}) => {
                 <Image style={stylez.image} source={require('../../assets/img/icon1.png')}/>
                 <Text>{state.currentLanguage == 'Nederlands'? 'Taak' : 'Task'}</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={stylez.button} onPress={() => navigation.navigate('Login')}>
+            <TouchableOpacity style={stylez.button} onPress={() => navigation.navigate('WorkList')}>
                 <Image style={stylez.image} source={require('../../assets/img/worklist.png')}/>
                 <Text>{state.currentLanguage == 'Nederlands'? 'Werklijst' : 'Worklist'}</Text>
             </TouchableOpacity>

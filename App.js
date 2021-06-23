@@ -10,6 +10,7 @@ import { Provider as LanguageProvider } from './src/context/LanguageContext';
 import {setNavigator} from './src/NavigationRef';
 import SettingsScreen from './src/screens/SettingsScreen';
 import AppInfoScreen from './src/screens/AppInfoScreen';
+import WorkListScreen from './src/screens/WorkListScreen';
 
 
 const navigator = createSwitchNavigator({
@@ -26,7 +27,8 @@ const navigator = createSwitchNavigator({
   MainFlow : createStackNavigator({
     Main: MainScreen,
     Settings: SettingsScreen,
-    AppInfo: AppInfoScreen
+    AppInfo: AppInfoScreen,
+    WorkList: WorkListScreen
   },{
     defaultNavigationOptions: {
       headerShown: false
